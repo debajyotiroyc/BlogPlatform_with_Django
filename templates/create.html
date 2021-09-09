@@ -1,0 +1,29 @@
+{%  extends 'base.html' %}
+{% load widget_tweaks %}
+{%  block content  %}
+<br>
+<h2 align="center">Write Your Blog</h2>
+<form method="POST">
+    {% csrf_token %}
+  <div class="mb-3">
+    <label for="title" class="form-label">Blog Title</label>
+    {% render_field form.title class="form-control" rows="1" %}
+    <div  class="form-text">Try to keep the title brief yet catchy! </div>
+  </div>
+  <div class="mb-3">
+    <label for="tagword" >Tag Word</label>
+    {% render_field form.tag_word class="form-control" rows="1" %}
+  </div>
+    <div class="mb-3">
+    <label for="intro" class="form-label">Blog Intro</label>
+    {% render_field form.intro class="form-control" rows="2" %}
+        <div  class="form-text">Include 1-2 lines about your blog in this section.</div>
+    </div>
+  <div class="mb-3">
+    <label for="body" class="form-label">Body</label>
+    {% render_field form.body class="form-control" rows="5" %}
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{%  endblock  %}

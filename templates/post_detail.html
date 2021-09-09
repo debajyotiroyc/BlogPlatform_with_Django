@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<br>
+
+    <small>Posted at {{ post.date_time }}</small>
+<br>
+<br>
+<div style="border: 1px solid black;padding: 10px">
+    <p align="center" style="font-size:25px"><strong>{{ post.title }}</strong></p>
+<p >{{ post.body }}</p>
+</div>
+    <hr>
+
+    <h2 class="subtitle">Comments</h2>
+
+    {% for comment in post.comments.all %}
+        <article class="media">
+            <div class="media-content">
+                <div class="content">
+                    <p>
+                        <strong>{{ comment.name }}</strong> <small>{{ comment.date_add }}</small>
+                        <br>
+                        {{ comment.body }}
+                    </p>
+                </div>
+            </div>
+        </article>
+    {% empty %}
+        <div class="notification">
+            <p>No comments yet!</p>
+        </div>
+    {% endfor %}
+
+    <hr>
+
+    <h2 class="subtitle">Add a comment</h2>
+
+    <form method="post" action=".">
+        {% csrf_token %}
+        <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        {% render_field form.name class="form-control" rows="1" %}
+      </div>
+        <div class="mb-3">
+        <label for="body" class="form-label">Comment</label>
+        {% render_field form.body class="form-control" rows="1" %}
+      </div>
+
+        <div class="field">
+            <div class="control">
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

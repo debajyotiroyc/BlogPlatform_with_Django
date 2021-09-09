@@ -1,0 +1,35 @@
+{%  extends 'base.html' %}
+{%  block content  %}
+<br>
+<h1 align="center">All Blogs</h1>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+{% for blog in blogs %}
+<br>
+<br>
+<br>
+<div class="col" style="width:350px;height:350px; margin:35px 25px 125px 25px " >
+          <div class="card shadow-sm">
+            <img src="https://source.unsplash.com/700x700/?{{blog.tag_word}}" class="d-block w-100" alt="...">
+
+            <div class="card-body">
+              <p>{{blog.title}}</p>
+              <p class="card-text">{{blog.intro}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{% url 'detail' blog.id %}" >Read More</a>
+
+                </div>
+                <small class="text-muted">{{blog.date_time}}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    {% endfor %}
+</div>
+{%  endblock  %}
