@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 class Blog(models.Model):
     title= models.TextField()
+    slug = models.SlugField(default="1")
     tag_word=models.TextField(default="random")
     intro= models.TextField()
     body=models.TextField()
@@ -20,3 +21,4 @@ class Comment(models.Model):
 
     class Meta:
         ordering=['date_add']
+
