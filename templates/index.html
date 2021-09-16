@@ -16,7 +16,7 @@
               <p class="card-text">{{blog.intro}}</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a href="{% url 'detail' blog.id %}" >Read More</a>
+                  <a href="{% url 'detail' blog.slug %}" >Read More</a>
 
                 </div>
                 <small class="text-muted">{{blog.date_time}}</small>

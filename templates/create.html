@@ -10,9 +10,18 @@
     {% render_field form.title class="form-control" rows="1" %}
     <div  class="form-text">Try to keep the title brief yet catchy! </div>
   </div>
+
   <div class="mb-3">
+    <label for="slugword" >Sub-Title</label>
+    {% render_field form.slug class="form-control" rows="1" %}
+    <div  class="form-text">Provide a Sub-title for your blog.</div>
+<br>
+    <div class="mb-3">
     <label for="tagword" >Tag Word</label>
     {% render_field form.tag_word class="form-control" rows="1" %}
+    <div  class="form-text">Write a Single word which descibes the topic of your blog. It is set to random by default. Feel free to give your own. </div>
+  </div>
+
   </div>
     <div class="mb-3">
     <label for="intro" class="form-label">Blog Intro</label>

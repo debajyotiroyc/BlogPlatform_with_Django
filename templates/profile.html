@@ -1,0 +1,23 @@
+{%  extends 'base.html' %}
+{% load widget_tweaks %}
+{%  block content  %}
+<br><br>
+<h2 align="center">My Account</h2>
+<br>
+<div style="padding:30px; border:5px solid blue;width:350px; margin-left:475px">
+    <label class="form-label"><strong>User Name:</strong></label>
+    {{ account.username }}
+    <br>
+    <label class="form-label"><strong>First Name:</strong></label>
+    {{ account.first_name }}
+    <br>
+    <label class="form-label"><strong>Last Name:</strong></label>
+    {{ account.last_name }}
+
+</div>
+<br>
+<h2 align="center">My Blogs</h2>
+<div>
+
+</div>
+{%  endblock %}
